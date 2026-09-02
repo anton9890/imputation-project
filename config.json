@@ -1,0 +1,38 @@
+{
+    "tsdb": {},
+    "query_proccess": {
+        "port": 4242,
+        "metric": "YOUR.METRIC.NAME",
+        "place": "",
+        "typeno": "",
+        "feeder": "",
+        "tag": "*",
+        "date": {
+            "start": "2023/10/02-00:00:00",
+            "end": "2023/10/08-00:00:00"
+        },
+        "url": "http://your-tsdb-host",
+        "api": "/api/query/dps/metric",
+        "save": "False"
+    },
+    "imputer": {
+        "interpolated": {
+            "type": "interpolated",
+            "args": {
+                "method": "linear",
+                "limit_direction": "forward"
+            }
+        },
+        "mice": {
+            "type": "mice",
+            "args": {
+                "estimator": "randomforest",
+                "max_iter": 5
+            }
+        },
+        "mean": {
+            "type": "mean",
+            "args": {}
+        }
+    }
+}
